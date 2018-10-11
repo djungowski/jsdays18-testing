@@ -7,9 +7,12 @@ bestimmten Wert aufruft.
 Teste, ob die Callbackfunktion mit
 dem übergebenen Wert aufgerufen wird
 
+jasmine.createSpy() - erzeug eine leere Spy-Funktion
+
 ## Signatur
+
 async(
-	callback,
-	callbackParam = 'Hallo Welt',
-	timeout = 400
+callback,
+callbackParam = 'Hallo Welt',
+timeout = 400
 )
