@@ -21,13 +21,14 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.js': ['coverage']
+      'src/**/*.js': ['coverage'],
     },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'jasmine-seed', 'coverage', 'junit'],
+    // reporters: ['progress', 'jasmine-seed', 'coverage', 'junit'],
+    reporters: ['mocha', 'junit', 'jasmine-seed', 'coverage'],
 
     // web server port
     port: 9876,
@@ -56,22 +57,26 @@ module.exports = function(config) {
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
-    istanbulReporter: {
-      dir: 'coverage',
-      reporters: [
-        { type: 'html', subdir: 'report-html' }
-      ]
-    },
+    // istanbulReporter: {
+    //   dir: 'coverage',
+    //   reporters: [{ type: 'html', subdir: 'report-html' }],
+    // },
 
     junitReporter: {
-      outputDir: 'reports'
+      outputDir: 'reports',
     },
 
     customLaunchers: {
-     HeadlessChromeWOPuppeteer: {
-       base: 'Chrome',
-       flags: ['--headless', '--remote-debugging-port=9222'],
-     }
-    }
+      HeadlessChromeWOPuppeteer: {
+        base: 'Chrome',
+        flags: ['--headless', '--remote-debugging-port=9222'],
+      },
+    },
+
+    client: {
+      jasmine: {
+        // seed: 82897,
+      },
+    },
   });
 };
