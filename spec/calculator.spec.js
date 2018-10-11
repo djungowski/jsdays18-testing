@@ -78,4 +78,14 @@ describe('Calculator', () => {
       expect(thrower).toThrow();
     });
   });
+  describe('#getRandomNumber()', () => {
+    it('should return a random number', () => {
+      const result = calc.getRandomNumber();
+      expect(result).toEqual(jasmine.any(Number));
+    });
+  });
+  it('should exist and be of type Object and Calculator', () => {
+    expect(calc).toEqual(jasmine.any(Calculator));
+    expect(calc).toEqual(jasmine.any(Object));
+  });
 });

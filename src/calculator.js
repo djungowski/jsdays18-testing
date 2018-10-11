@@ -10,4 +10,7 @@ class Calculator {
       throw 'You are not chuck norris';
     }
   }
+  getRandomNumber() {
+    return Math.random();
+  }
 }
