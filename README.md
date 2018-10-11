@@ -12,11 +12,15 @@ npm install -D karma
 npm install -D karma-jasmine karma-chrome-launcher jasmine-core
 ```
 
+# Initialisierung
+
+node_modules/.bin/karma init
+
 # Ausführung
 
-Server starten: karma start
+Server starten: node_modules/.bin/karma start
 
-Test ausführen: karma run
+Test ausführen: node_modules/.bin/karma run
 
 # schönere Ausgabe
 
