@@ -1,6 +1,8 @@
 // Karma configuration
 // Generated on Thu Oct 11 2018 09:25:28 GMT+0200 (Central European Summer Time)
 
+// process.env.CHROME_BIN = require('puppeteer').executablePath(); // Puppeteer
+
 module.exports = function(config) {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -18,12 +20,14 @@ module.exports = function(config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {},
+    preprocessors: {
+      'src/**/*.js': ['coverage']
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'jasmine-seed'],
+    reporters: ['progress', 'jasmine-seed', 'coverage', 'junit'],
 
     // web server port
     port: 9876,
@@ -41,6 +45,8 @@ module.exports = function(config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
+    // browsers: ['HeadlessChromeWOPuppeteer'], // Kein Puppeteer
+    // browsers: ['ChromeHeadless'], // Puppeteer
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
@@ -50,10 +56,22 @@ module.exports = function(config) {
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
-    client: {
-      jasmine: {
-        seed: 65803,
-      },
+    istanbulReporter: {
+      dir: 'coverage',
+      reporters: [
+        { type: 'html', subdir: 'report-html' }
+      ]
     },
+
+    junitReporter: {
+      outputDir: 'reports'
+    },
+
+    customLaunchers: {
+     HeadlessChromeWOPuppeteer: {
+       base: 'Chrome',
+       flags: ['--headless', '--remote-debugging-port=9222'],
+     }
+    }
   });
 };
