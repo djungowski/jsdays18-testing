@@ -1,1 +1,3 @@
-class Calculator {}
+class Calculator {
+  add() {}
+}

@@ -27,3 +27,7 @@ Test ausführen: node_modules/.bin/karma run
 `npm install -D karma-mocha-reporter`
 
 in der karma.conf.js unter reporters: den Wert ['mocha'] eintragen.
+
+# Links (weitere)
+
+- https://github.com/sspringer82/programmingChallenges
