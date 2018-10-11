@@ -27,9 +27,7 @@ describe('aufgabe 4', () => {
     afterEach(() => jasmine.clock().uninstall());
 
     it('should call the back with a given param with fake clock', () => {
-      jasmine.clock().mockDate(new Date('01-01-1984'));
-      const cb = jasmine.createSpy('🐙');
-      console.log(new Date().toString());
+      const cb = jasmine.createSpy('callback spy');
 
       async(cb, value, timeout);
 
