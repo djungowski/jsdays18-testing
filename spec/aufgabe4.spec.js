@@ -13,11 +13,12 @@ describe('aufgabe 4', () => {
     expect(cb).toHaveBeenCalledWith(value);
   });
 
-  it('should call the back with a given param after 400ms', () => {
+  it('should call the back with a given param after 400ms', done => {
     const cb = jasmine.createSpy();
     async(cb, value, timeout);
     setTimeout(() => {
       expect(cb).toHaveBeenCalledWith(value);
+      done();
     }, timeout);
   });
 });
