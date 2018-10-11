@@ -1,0 +1,32 @@
+{
+  "name": "jsdays18-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djungowski/jsdays18-testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djungowski/jsdays18-testing/issues"
+  },
+  "homepage": "https://github.com/djungowski/jsdays18-testing#readme",
+  "devDependencies": {
+    "jasmine": "^3.2.0",
+    "jasmine-ajax": "^3.4.0",
+    "jasmine-core": "^3.2.1",
+    "jasmine-jquery": "^2.1.1",
+    "karma": "^3.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.2",
+    "karma-junit-reporter": "^1.2.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "mockery": "^2.1.0",
+    "puppeteer": "^1.9.0"
+  }
+}
